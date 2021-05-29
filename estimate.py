@@ -6,12 +6,12 @@ def wallis(n):
         pi = 1.0
         for i in range(1,n+1):
             numerator = 4*(i*i)
-            denominator = 4*(i*i) - 1
+            denominator = numerator - 1
             pi *= numerator/denominator
         pi = 2*pi
         return pi
 
-def distance(x,y):
+def distance(x,y): # Function to calculate sqare of distance from origin
     dist = x*x + y*y
     return dist
 
@@ -21,7 +21,7 @@ def monte_carlo(n):
         x = random.random()
         y = random.random()
         dist = distance(x,y)
-        if dist <= 1:
+        if dist <= 1: # if sqyare of distance less than 1 then distance less than 1
             in_circle += 1
     pi = in_circle/n
     pi *= 4
